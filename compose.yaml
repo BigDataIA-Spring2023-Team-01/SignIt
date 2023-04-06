@@ -3,7 +3,8 @@ version: '3'
 services:
   streamlit:
     build:
-      context: ./streamlit
+      context: .
+      dockerfile: ./streamlit/Dockerfile
 
     container_name: streamlit.latest
 
@@ -14,12 +15,12 @@ services:
     depends_on:
       - fastapi
     restart: "no"
-    args:
-    - REQUIREMENTS=requirements.txt
+
 
   fastapi:
     build:
-      context: ./api
+      context: .
+      dockerfile: ./api/Dockerfile
     container_name: fastapi.latest
 
     ports:
@@ -27,6 +28,5 @@ services:
     volumes:
       - ./data:/app/data
     restart: "no"
-    args:
-    - REQUIREMENTS=requirements.txt
+
 
