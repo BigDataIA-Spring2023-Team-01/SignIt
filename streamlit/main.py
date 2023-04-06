@@ -49,7 +49,8 @@ def merge_videos(video_list):
     url = f"{API_URL}/video_merge"
     response = requests.post(url,json={"video_list": video_list})
     if response.status_code == 200:
-        return response.json().get('key_name')
+        res = json.loads(response.text)
+        return res['key_name']
     else:
         return []
 
