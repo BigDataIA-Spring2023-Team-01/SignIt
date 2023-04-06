@@ -3,3 +3,4 @@
 data/kaggledataset
 .env
 SignIt.pem
+data/archive

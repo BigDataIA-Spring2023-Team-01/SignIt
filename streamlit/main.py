@@ -41,6 +41,17 @@ def get_video_id(transcript):
         return response.text
     else:
         return []
+    
+
+def merge_videos(video_list):
+    API_URL = "http://fastapi.latest:8000"
+    url = f"{API_URL}/video_merge"
+    response = requests.post(url,json={"video_list": video_list})
+    if response.status_code == 200:
+        return response.json()
+    else:
+        return []
+
 
 
 st.title("Upload or Record and Transcribe Audio")
@@ -64,7 +75,13 @@ if source == "Upload file":
 ## Step 2 - Conver the transcript into sign language
         video_list = get_video_id(text)
         st.write(video_list)
-        
+
+
+## Step 3 - Merge all the sign language videos and display it to user
+        merged_video = merge_videos(video_list['video'])
+        video_url = f"data/archive/signlanguagevideos/{merged_video['key_name']}"
+        st.video(video_url)
+
 elif source == "Record audio":
     st.warning("Code not implemented yet")
     
