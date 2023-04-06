@@ -49,7 +49,7 @@ def merge_videos(video_list):
     url = f"{API_URL}/video_merge"
     response = requests.post(url,json={"video_list": video_list})
     if response.status_code == 200:
-        return response.json()
+        return response.json().get('key_name')
     else:
         return []
 
@@ -79,8 +79,8 @@ if source == "Upload file":
 
 
 ## Step 3 - Merge all the sign language videos and display it to user
-        merged_video = merge_videos(video_list['video'])
-        video_url = f"data/archive/signlanguagevideos/{merged_video['key_name']}"
+        merged_video_name = merge_videos(video_list['video'])
+        video_url = f"data/archive/signlanguagevideos/{merged_video_name}"
         st.video(video_url)
 
 elif source == "Record audio":
