@@ -17,7 +17,7 @@ services:
 
   fastapi:
     build:
-      context: ./fastapi
+      context: ./api
     container_name: fastapi.latest
 
     ports:
