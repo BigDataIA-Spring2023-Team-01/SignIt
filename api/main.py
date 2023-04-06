@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-
+import pandas as pd
 app = FastAPI()
 
 videos = [
@@ -9,5 +9,7 @@ videos = [
 ]
 
 @app.get("/videos")
+
 async def get_videos():
-    return videos
+    df = pd.read_csv('data/features_df.csv')
+    return df

@@ -22,7 +22,7 @@ def main():
     videos = get_videos()
 
     # Display the video data in a table
-    st.table(videos)
+    st.write(videos)
 
 # Run the Streamlit app
 if __name__ == "__main__":

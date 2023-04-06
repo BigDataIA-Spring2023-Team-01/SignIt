@@ -5,7 +5,7 @@ import os
 
 
 
-UPLOAD_DIR = "../data/audio_files"
+UPLOAD_DIR = "data/audio_files"
 if not os.path.exists(UPLOAD_DIR):
             os.makedirs(UPLOAD_DIR)
 
