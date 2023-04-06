@@ -38,7 +38,8 @@ def get_video_id(transcript):
     url = f"{API_URL}/search_video_ids"
     response = requests.post(url,json={"transcript": transcript})
     if response.status_code == 200:
-        return response.text
+        video_list = json.loads(response.text)
+        return video_list
     else:
         return []
     
