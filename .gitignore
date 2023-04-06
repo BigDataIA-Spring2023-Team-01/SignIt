@@ -1,4 +1,5 @@
 .virenv
+.signit
 data/kaggledataset
 .env
 SignIt.pem
