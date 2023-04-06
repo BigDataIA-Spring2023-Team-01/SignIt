@@ -3,7 +3,7 @@ version: '3'
 services:
   streamlit:
     build:
-      context: ./streamlit
+      context: .
 
     container_name: streamlit.latest
 
@@ -17,7 +17,7 @@ services:
 
   fastapi:
     build:
-      context: ./api
+      context: .
     container_name: fastapi.latest
 
     ports:
