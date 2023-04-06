@@ -63,7 +63,7 @@ if source == "Upload file":
 
 ## Step 2 - Conver the transcript into sign language
         video_list = get_video_id(text)
-        st.text_area(video_list)
+        st.write(video_list)
         
 elif source == "Record audio":
     st.warning("Code not implemented yet")
