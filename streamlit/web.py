@@ -12,7 +12,7 @@ if not os.path.exists(UPLOAD_DIR):
 
 
 def whisper(file_path):
-    token = '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'
+    token = os.environ.get('OPENAI_SECRET_KEY')
     url = 'https://api.openai.com/v1/audio/transcriptions'
     audio_format = 'm4a'
     # Set your API key as a header
