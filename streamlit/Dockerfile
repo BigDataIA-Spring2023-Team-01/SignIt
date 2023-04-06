@@ -11,6 +11,8 @@ RUN apt-get update && apt-get install -y \
 
 COPY . .
 
+COPY ../requirements.txt .
+
 RUN pip install --no-cache-dir --upgrade -r ./requirements.txt
 
 EXPOSE 8501
