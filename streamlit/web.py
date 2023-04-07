@@ -37,6 +37,7 @@ def whisper(file_path):
 
 # Streamlit app
 
+
 # setting up the background image 
 def get_base64(bin_file):
     with open(bin_file, 'rb') as f:
@@ -57,7 +58,8 @@ def background(png_file):
 
 background(r"./data/images/Untitled-2.png")
 
-st.title("SignIt :wind_blowing_face::ok_hand:")
+
+st.title("SignIt:wind_blowing_face::ok_hand:")
 st.header("Upload or Record and Transcribe Audio")
 
     # Get user input: upload file or record audio
