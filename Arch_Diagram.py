@@ -20,7 +20,7 @@ with Diagram("Workflow", show=False, direction="LR"):
     # creating streamlit cloud
     with Cluster("Streamlit"):
         with Cluster("Streamlit Cloud"):
-          streamlit_cloud = DirectMail("Streamlit Cloud")
+          streamlit_cloud = Docker("Streamlit Cloud")
           streamlit_app = Custom("Streamlit","./data/images/streamlit-logo.png") 
 
     # creating API cluster 
