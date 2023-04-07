@@ -52,8 +52,7 @@ def merge_videos(video_list):
         res = json.loads(response.text)
         return res['key_name']
     else:
-        return []
-
+        return {'video': []}
 
 
 st.title("Upload or Record and Transcribe Audio")
