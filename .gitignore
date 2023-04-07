@@ -3,9 +3,4 @@
 data/kaggledataset
 .env
 SignIt.pem
-<<<<<<< Updated upstream
-data/archive
 signit 
-=======
-signit
->>>>>>> Stashed changes
