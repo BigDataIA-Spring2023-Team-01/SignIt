@@ -40,7 +40,7 @@ docker-compose build
 Docker-compose up -d
  ````
 
-Note: This assumes that you have docker desktop installed in your machine, if not please download docker desktop from the following website (Docker Desktop) and startup the docker and docker-compose service using the below documentation : https://docs.docker.com/desktop/
+Note: This assumes that you have docker desktop installed in your machine, if not please download docker desktop from the following website (Docker Desktop: https://www.docker.com/products/docker-desktop/) and startup the docker and docker-compose service using the below documentation : https://docs.docker.com/desktop/
   
 
 In order to execute the project you would also need to make a .env file with the following requirements
