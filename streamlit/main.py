@@ -83,7 +83,7 @@ if source == "Upload file":
             video_url = f"data/archive/signlanguagevideos/{merged_video_name}"
             st.success("Sign Language created")
         st.video(video_url)
-
+        st.write(text)
 elif source == "Record audio":
     st.warning("Code not implemented yet")
     
