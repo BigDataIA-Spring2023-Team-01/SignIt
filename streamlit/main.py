@@ -7,7 +7,7 @@ import base64
 load_dotenv()
 
 
-UPLOAD_DIR = "data/audio_files"
+UPLOAD_DIR = "data/archive/userinputvideos"
 if not os.path.exists(UPLOAD_DIR):
             os.makedirs(UPLOAD_DIR)
 
