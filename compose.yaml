@@ -11,7 +11,6 @@ services:
     ports:
       - "8501:8501"
     volumes:
-      - docker_data:/app/data
       - ./data:/app/data  
     depends_on:
       - fastapi
@@ -27,11 +26,6 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - docker_data:/app/data
       - ./data:/app/data  
     restart: "no"
 
-
-volumes:
-  docker_data:
-    external: true
