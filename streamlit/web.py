@@ -57,7 +57,8 @@ def background(png_file):
 
 background(r"./data/images/Untitled-2.png")
 
-st.title("Upload or Record and Transcribe Audio")
+st.title("SignIt :wind_blowing_face::ok_hand:")
+st.header("Upload or Record and Transcribe Audio")
 
     # Get user input: upload file or record audio
 source = st.radio("Select audio source", ("Upload file", "Record audio"))
