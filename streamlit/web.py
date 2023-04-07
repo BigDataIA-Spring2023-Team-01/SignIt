@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 import json
 import os
-
+import base64
 
 
 UPLOAD_DIR = "data/audio_files"
@@ -36,6 +36,26 @@ def whisper(file_path):
     return(response.text)
 
 # Streamlit app
+
+# setting up the background image 
+def get_base64(bin_file):
+    with open(bin_file, 'rb') as f:
+        data = f.read()
+    return base64.b64encode(data).decode()
+
+def background(png_file):
+    bin_str = get_base64(png_file)
+    page_bg_img = '''
+    <style>
+    .stApp {
+    background-image: url("data:image/png;base64,%s");
+    background-size: cover;
+    }
+    </style>
+    ''' % bin_str
+    st.markdown(page_bg_img, unsafe_allow_html=True)
+
+background(r"C:\Users\user\OneDrive\Desktop\Untitled-2.png")
 
 st.title("Upload or Record and Transcribe Audio")
 
