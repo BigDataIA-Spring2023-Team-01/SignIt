@@ -108,15 +108,17 @@ if source == "Upload file":
         st.text_area('',text)
 elif source == "Record audio":
     user_input = st.text_input("Enter text to convert to sign language")
-    video_list = get_video_id(user_input)
+    translate = st.button('Translate')
+    if translate:
+        video_list = get_video_id(user_input)
 
 
-    with st.spinner("Running..."):
-        merged_video_name = merge_videos(video_list['video'])
-        video_url = f"data/archive/signlanguagevideos/{merged_video_name}"
-        st.success("Sign Language created")
-    st.video(video_url)
-    st.text_area('',user_input)
+        with st.spinner("Running..."):
+            merged_video_name = merge_videos(video_list['video'])
+            video_url = f"data/archive/signlanguagevideos/{merged_video_name}"
+            st.success("Sign Language created")
+        st.video(video_url)
+        st.text_area('',user_input)
 
     
     
