@@ -6,6 +6,7 @@ import boto3
 import os
 from dotenv import load_dotenv
 import uuid
+import re
 load_dotenv()
 
 app = FastAPI()
@@ -41,7 +42,9 @@ async def search_video_ids(transcript: Transcript):
     df = pd.read_csv("data/features_df.csv")
 
     try:
-        words = transcript.transcript.split()
+        words_only = re.sub(r'[^a-zA-Z\s]', '', transcript.transcript)
+        words = words_only.split()
+
         video_ids = []
         for word in words:
             matching_row = df.loc[df['word'] == word.lower()]
