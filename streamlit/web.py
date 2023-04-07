@@ -55,7 +55,7 @@ def background(png_file):
     ''' % bin_str
     st.markdown(page_bg_img, unsafe_allow_html=True)
 
-background(r"C:\Users\user\OneDrive\Desktop\Untitled-2.png")
+background(r"./data/images/Untitled-2.png")
 
 st.title("Upload or Record and Transcribe Audio")
 
