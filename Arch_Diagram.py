@@ -23,4 +23,12 @@ with Diagram("Workflow", show=False, direction="LR"):
           streamlit_cloud = DirectMail("Streamlit Cloud")
           streamlit_app = Custom("Streamlit","./data/images/streamlit-logo.png") 
 
+    # creating API cluster 
+    with Cluster("API's"):
+       with Cluster("Docker"):
+          docker = Docker("docker")
+          fast_api_1 = LogstashPipeline("API: video_id retreival")
+          fast_api_2 = LogstashPipeline("API: video retreival")
+          whisper_api = Custom("Whisper API", "./data/images/download.png") 
+    
 
