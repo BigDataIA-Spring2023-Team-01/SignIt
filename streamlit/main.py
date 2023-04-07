@@ -3,6 +3,7 @@ import requests
 import json
 import os
 from dotenv import load_dotenv
+import base64
 load_dotenv()
 
 
@@ -54,8 +55,29 @@ def merge_videos(video_list):
     else:
         return {'video': []}
 
+# setting up the background image 
+def get_base64(bin_file):
+    with open(bin_file, 'rb') as f:
+        data = f.read()
+    return base64.b64encode(data).decode()
 
-st.title("Upload or Record and Transcribe Audio")
+def background(png_file):
+    bin_str = get_base64(png_file)
+    page_bg_img = '''
+    <style>
+    .stApp {
+    background-image: url("data:image/png;base64,%s");
+    background-size: cover;
+    }
+    </style>
+    ''' % bin_str
+    st.markdown(page_bg_img, unsafe_allow_html=True)
+
+background(r"./data/images/Untitled-2.png")
+
+
+st.title("SignIt:wind_blowing_face::ok_hand:")
+st.header("Upload or Record and Transcribe Audio")
 
 source = st.radio("Select audio source", ("Upload file", "Record audio"))
 
