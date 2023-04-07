@@ -31,4 +31,9 @@ with Diagram("Workflow", show=False, direction="LR"):
           fast_api_2 = LogstashPipeline("API: video retreival")
           whisper_api = Custom("Whisper API", "./data/images/download.png") 
     
+    # creating bucket cluster 
+    with Cluster("S3 storages"):
+       s3_ASL = S3("signlanguage")
+       s3_final = S3("signitfinalvideos")
+
 
