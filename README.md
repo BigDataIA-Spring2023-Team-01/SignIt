@@ -8,9 +8,9 @@ The application is user-friendly, interactive, and accessible to all users, incl
 
 Documentation : https://codelabs-preview.appspot.com/?file_id=1X1QqIOQJCSoaQi4mgK65-rOduMF31kH8m9TLyu2wmto/edit#3
 
-Streamlit :
+Streamlit : http://ec2-18-234-225-32.compute-1.amazonaws.com:8501/
 
-Fast API: 
+Fast API: http://ec2-18-234-225-32.compute-1.amazonaws.com:8000/docs
 
 # Project Execution 
 
