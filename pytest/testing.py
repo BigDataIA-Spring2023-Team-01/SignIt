@@ -4,13 +4,14 @@ import os
 import json
 import pytest
 import requests
+load_dotenv()
 token = os.environ.get("OPENAI_SECRET_KEY") # whisper api key
 
 
 
 def test_incorrect_file_format():
     # upload a text file instead of an mp3 file
-    url = 'http://ec2-18-234-225-32.compute-1.amazonaws.com:8501/'
+    url = os.environ.get("STREAMLIT_URL")
     files = {'file': ('download.jpeg', open('download.jpeg', 'rb'))}
     response = requests.post(url, files=files)
     
