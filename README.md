@@ -31,6 +31,7 @@ python3 dataset_download.py
 	
 Note: This will download around 5GB of dataset to the data/ directory. This will be needed to    create the sign language videos. 
 Always run the above commands in sequence
+
 5.We will run the docker compose command which will initiate all the containers and volumes needed and will startup the project
  ````
 docker-compose build
