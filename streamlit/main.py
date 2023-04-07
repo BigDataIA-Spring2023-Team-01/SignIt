@@ -97,7 +97,7 @@ if source == "Upload file":
 
 ## Step 2 - Conver the transcript into sign language
         video_list = get_video_id(text)
-
+        st.write(video_list)
 
 ## Step 3 - Merge all the sign language videos and display it to user
         with st.spinner("Running..."):
