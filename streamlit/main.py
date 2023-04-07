@@ -75,12 +75,13 @@ if source == "Upload file":
 
 ## Step 2 - Conver the transcript into sign language
         video_list = get_video_id(text)
-        st.write(video_list)
 
 
 ## Step 3 - Merge all the sign language videos and display it to user
-        merged_video_name = merge_videos(video_list['video'])
-        video_url = f"data/archive/signlanguagevideos/{merged_video_name}"
+        with st.spinner("Running..."):
+            merged_video_name = merge_videos(video_list['video'])
+            video_url = f"data/archive/signlanguagevideos/{merged_video_name}"
+            st.success("Sign Language created")
         st.video(video_url)
 
 elif source == "Record audio":
