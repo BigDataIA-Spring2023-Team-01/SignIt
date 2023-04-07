@@ -37,3 +37,12 @@ with Diagram("Workflow", show=False, direction="LR"):
        s3_final = S3("signitfinalvideos")
 
 
+#----------------------------------------------------------------------------------------------
+# Flow user >> Edge(label="Asks question after selecting file",color="blue") >> streamlit_app
+
+    user >> Edge(label="Uploads audio or provides link",color="blue") >> streamlit_app
+    streamlit_app >> Edge(label="triggers whisper api to generate transcript",color="blue") >> whisper_api
+    whisper_api >> Edge(label="retreives video ids based on transcript",color="blue") >> fast_api_1 
+    fast_api_1 >> Edge(label="gets video id",color="blue") >> s3_ASL
+    fast_api_2 >> Edge(label="Retrieves videos through kaggle",color="blue") >> kaggle
+    kaggle >> Edge(label="saves the final merged video",color="blue") >> s3_final
