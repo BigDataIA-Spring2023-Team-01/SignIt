@@ -79,7 +79,7 @@ background(r"./data/images/Untitled-2.png")
 st.title("SignIt:wind_blowing_face::ok_hand:")
 st.header("Upload or Record and Transcribe Audio")
 
-source = st.radio("Select audio source", ("Upload file", "Record audio"))
+source = st.radio("Select audio source", ("Upload file", "Enter text"))
 
 if source == "Upload file":
 
@@ -106,7 +106,7 @@ if source == "Upload file":
             st.success("Sign Language created")
         st.video(video_url)
         st.text_area('',text)
-elif source == "Record audio":
+elif source == "Enter text":
     user_input = st.text_input("Enter text to convert to sign language")
     translate = st.button('Translate')
     if translate:
